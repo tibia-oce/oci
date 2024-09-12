@@ -48,7 +48,7 @@ packaging==24.1
     # via ansible-core
 passlib==1.7.4
     # via -r requirements.in
-pyasn1==0.6.0
+pyasn1==0.6.1
     # via
     #   pyasn1-modules
     #   rsa
