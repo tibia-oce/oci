@@ -22,7 +22,7 @@ charset-normalizer==3.3.2
     # via requests
 cryptography==43.0.1
     # via ansible-core
-google-auth==2.34.0
+google-auth==2.35.0
     # via kubernetes
 idna==3.8
     # via requests
