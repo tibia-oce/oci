@@ -9,10 +9,6 @@ terraform {
 
 terraform {
   required_providers {
-    discord = {
-      source = "Chaotic-Logic/discord"
-      version = "0.0.1"
-    }
     oci = {
       source  = "oracle/oci"
       version = ">= 4.64.0"
@@ -21,19 +17,7 @@ terraform {
       source  = "hashicorp/hcp"
       version = ">= 0.34.0"
     }
-    cloudflare = {
-      source  = "cloudflare/cloudflare"
-      version = "~> 4"
-    }
   }
-}
-
-provider "discord" {
-    token = var.discord_token
-}
-
-provider "cloudflare" {
-  api_token = data.hcp_vault_secrets_secret.cf_token.secret_value
 }
 
 provider "hcp" {
@@ -42,7 +26,7 @@ provider "hcp" {
 }
 
 provider "oci" {
-  private_key  = data.hcp_vault_secrets_secret.oci_private_key.secret_value
+  private_key = data.hcp_vault_secrets_secret.oci_private_key.secret_value
   tenancy_ocid = var.tenancy_ocid
   user_ocid    = var.user_ocid
   fingerprint  = var.fingerprint
